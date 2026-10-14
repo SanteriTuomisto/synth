@@ -3,9 +3,10 @@ import { ref, Ref } from 'vue';
 import Knob from './components/Knob.vue';
 
 function createNoteTable() {
-  const noteFreq = [];
+  // One map of note name -> frequency (Hz) per octave
+  const noteFreq: Record<string, number>[] = [];
   for (let i = 0; i < 9; i++) {
-    noteFreq[i] = [];
+    noteFreq[i] = {};
   }
 
   noteFreq[0]["A"] = 27.500000000000000;
